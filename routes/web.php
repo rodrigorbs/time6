@@ -11,10 +11,26 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/',['as' =>'root','uses'=>function (){
+
+    if (Auth::check()){
+        return redirect()->route('dashboard');
+    }
+    else{
+        return view('auth.login');
+    }
+
+}]);
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+require_once base_path('routes/imports/imageUpload.php');
+require_once base_path('routes/imports/dashboard.php');
+require_once base_path('routes/imports/campus.php');
+require_once base_path('routes/imports/bloco.php');
+require_once base_path('routes/imports/sala.php');
+require_once base_path('routes/imports/rota.php');
+require_once base_path('routes/imports/grade.php');
+require_once base_path('routes/imports/disciplina.php');

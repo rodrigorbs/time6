@@ -10,9 +10,10 @@ return [
     | This value is the name of your application. This value is used when the
     | framework needs to place the application's name in a notification or
     | any other location as required by the application or its packages.
+    |
     */
 
-    'name' => 'Laravel',
+    'name' => env('APP_NAME', 'Laravel'),
 
     /*
     |--------------------------------------------------------------------------
@@ -77,7 +78,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'pt-br',
 
     /*
     |--------------------------------------------------------------------------
@@ -166,7 +167,6 @@ return [
         /*
          * Package Service Providers...
          */
-        Laravel\Tinker\TinkerServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -176,6 +176,9 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+
+        Collective\Html\HtmlServiceProvider::class,
 
     ],
 
@@ -225,6 +228,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 

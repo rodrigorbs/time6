@@ -1,22 +1,41 @@
 @extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+@section('titulo')
+    Login
+@stop
 
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
+@section('conteudo')
+    <br>
+    <div class="container-login">
+        <div class="row">
+            <div class="col s3"></div>
+            <div class="col s6">
 
+
+                <div class="card-content white-text">
+
+                   <p class="login-img" align="center">
+                        {!!Html::image('images/logo.png')!!}
+
+                    </p>
+                    <br>
+          <span class="card-title centered"><h5>Iesb Localize</h5></span>
+                </div>
+            </div>
+            <div class="col s3"></div>
+        </div>
+
+        <div class ="row">
+            <div class="col s3"></div>
+            <div class="col s12 m6 l6 z-depth-6 card-panel hoverable"><br>
+                <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                    {{ csrf_field() }}
+                    <div class="row">
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">mail_outline</i>
+                                <label for="email" data-error="wrong" data-success="right">Email</label>
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
                                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -24,13 +43,14 @@
                                 @endif
                             </div>
                         </div>
+                    </div>
 
+                    <div class="row">
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
+                            <div class="input-field col s12" >
+                                <i class="material-icons prefix">lock_outline</i>
+                                <label for="password">Senha</label>
                                 <input id="password" type="password" class="form-control" name="password" required>
-
                                 @if ($errors->has('password'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
@@ -38,32 +58,44 @@
                                 @endif
                             </div>
                         </div>
+                    </div>
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </div>
-                            </div>
+                    <div class="row">
+                        <div class="input-field col s12 m12 l12  login-text">
+                            <input type="checkbox" id="remember-me" />
+                            <label for="remember-me">Lembrar senha</label>
                         </div>
+                    </div>
 
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button type="submit" class="btn waves-effect waves-light col s12">
+                                Entrar
+                            </button>
+                        </div>
+                    </div>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
+                    <div class="row">
+                        <div class="input-field col s6 m6 l6">
+                            <p class="margin medium-small">
+                                <a class="black-text" href="{{ route('register') }}">
+                                    Cadastre-se
                                 </a>
-                            </div>
+                            </p>
                         </div>
-                    </form>
-                </div>
+
+                        <div class="input-field col s6 m6 l6">
+                            <p class="margin right-align medium-small">
+                                <a class="black-text" href="{{ route('password.request') }}">
+                                    Esqueceu a senha?
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </form>
             </div>
+            <div class="col s3"></div>
         </div>
     </div>
-</div>
+
 @endsection

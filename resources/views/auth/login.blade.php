@@ -15,11 +15,13 @@
                 <div class="card-content white-text">
 
                    <p class="login-img" align="center">
-                        {!!Html::image('images/logo.png')!!}
+                      <a href="{{url('/')}}">  {!!Html::image('images/logo.png')!!}</a>
 
                     </p>
                     <br>
-          <span class="card-title centered"><h5>Iesb Localize</h5></span>
+          <span class="card-title centered"><h5>
+                    IESB Localize
+                  </h5></span>
                 </div>
             </div>
             <div class="col s3"></div>

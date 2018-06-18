@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>IESB |  @yield('titulo')</title>
 
-    <link rel="icon" type="image/x-icon" href="{{ asset('images/sau-icon.png') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/iesb.png') }}" />
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/materialize.css') }}" media="screen,projection">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}" media="screen,projection">

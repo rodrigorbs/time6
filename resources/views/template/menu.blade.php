@@ -49,7 +49,7 @@
             </li>
 
             <li>
-                <a href="/" class="collapsible-header waves-effect bold active">
+                <a href="/dashboard" class="collapsible-header waves-effect bold active">
                     <i class="material-icons left">dashboard</i>
                     Dashboard
                 </a>

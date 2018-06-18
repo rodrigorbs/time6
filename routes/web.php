@@ -18,7 +18,7 @@ Route::get('/',['as' =>'root','uses'=>function (){
         return redirect()->route('dashboard');
     }
     else{
-        return view('auth.login');
+        return view('imports.homepage');
     }
 
 }]);
@@ -34,3 +34,4 @@ require_once base_path('routes/imports/sala.php');
 require_once base_path('routes/imports/rota.php');
 require_once base_path('routes/imports/grade.php');
 require_once base_path('routes/imports/disciplina.php');
+require_once base_path('routes/imports/homepage.php');

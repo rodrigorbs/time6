@@ -3,28 +3,45 @@
       <div class="card hoverable">
         <div class="card-content">
           <div class="row">
+            <div class="col s6 m6">
+          		<p><strong>Campus</strong></p>
+							@foreach($campus as $ncampus)
+               @if($ncampus->id == $rota->rota_idCampus_destino)
+                            {{$ncampus->nomeCampus}}
+                @endif
+							@endforeach
+          	</div>
+
           	<div class="col s6 m6">
+          		<p><strong>Bloco</strong></p>
+              @foreach($blocos as $bloco)
+               @if($bloco->id == $rota->rota_IdBlocos_destino)
+                            {{$bloco->nomeBlocos}}
+                @endif
+							@endforeach
+          	</div>
+
+            <div class="col s6 m6">
           		<p><strong>Origem</strong></p>
-          		Entra principal
+              {{$rota->origem}}
           	</div>
 
-          	<div class="col s6 m6">
-          		<p><strong>Sala</strong></p>
-          		JB6
+            <div class="col s6 m6">
+          		<p><strong>Destino</strong></p>
+              {{$rota->destino}}
           	</div>
 
-            <div class="col s6 m12">
+            <div class="col s6 m6">
           		<p><strong>Orientação</strong></p>
-          		Segui direto -> primeiro Bloco a esqueda ->
-              Segundo Andar -> 3 sala a esquerda.
+              {{$rota->orientacao}}
           	</div>
 
           </div>
         </div>
 
-        <div class="card-action">
-	        <a href="">  <i class="material-icons">edit</i></a>
-	        <a href="">  <i class="material-icons">delete</i></a>
+        <div class="card-action" align="right">
+	        <a href="/rota/editar/{{$rota->id}}">  <i class="material-icons">edit</i></a>
+	        <a href="/rota/excluir/{{$rota->id}}">  <i class="material-icons">delete</i></a>
         </div>
       </div>
     </div>

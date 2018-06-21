@@ -16,8 +16,8 @@ class CreateSalasTable extends Migration
         Schema::create('salas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nomeSalas')->nullable();
-            $table->string('andar')->nullable();
-            $table->integer('capacidade')->nullable();
+            $table->string('andar');
+            $table->integer('capacidade');
             $table->integer('blocos_idBlocos');
             $table->integer('blocos_idCampus');
             $table->timestamps();

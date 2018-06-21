@@ -40,9 +40,9 @@ class SalaController extends Controller
     public function store($id, Request $request, Sala $sala, Bloco $blocos){
       $this->validate($request,[
             'nomeSalas' => 'required|min:3',
-            'andar' => 'required|numeric|max:10|same:$blocos->qtdAndares',
-            'capacidade' => 'required|numeric|min:10|max:150',
+
       ]);
+
 
       if($request->has('id')){
         $sala = Sala::find($request->id);

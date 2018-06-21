@@ -42,11 +42,11 @@
 </select>
 
 {{Form::label('Andar', 'Andar')}}
-{{Form::text('andar','',['class'=>'form-control','required','placeholder' => 'Digite aqui'])}}
+{{Form::text('andar','',['class'=>'form-control','','placeholder' => 'Digite aqui'])}}
 {{Form::label('Sala', 'Nome da Sala')}}
 {{Form::text('nomeSalas','',['class'=>'form-control','required','placeholder' => 'Digite aqui'])}}
 {{Form::label('capacidade', 'Capacidade de alunos')}}
-{{Form::text('capacidade','',['class'=>'form-control','required','placeholder' => 'Digite aqui'])}}
+{{Form::text('capacidade','',['class'=>'form-control','','placeholder' => 'Digite aqui'])}}
 <a class='btn btn-default' href="{{url('sala')}}">Voltar</a>
 {{Form::submit('Cadastrar',['class'=>'btn btn-default'])}}
 {{Form::close()}}

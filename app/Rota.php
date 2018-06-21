@@ -1,4 +1,4 @@
-<<?php
+<?php
 
 namespace App;
 
@@ -9,6 +9,6 @@ class Rota extends Model
 
     protected $fillable = [
 
-          'destino','orientacao'
+          'origem','destino','orientacao'
     ];
 }

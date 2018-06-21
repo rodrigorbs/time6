@@ -1,11 +1,11 @@
 @extends('template.base')
 
 @section('titulo')
-	Atualizar dados do Bloco
+	Atualizar dados da Sala
 @stop
 
 @section('pagina')
-	Editar Bloco
+	Editar Sala
 @stop
 
 @section('conteudo')

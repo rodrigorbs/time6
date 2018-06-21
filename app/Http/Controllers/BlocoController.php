@@ -47,8 +47,8 @@ class BlocoController extends Controller
 
     public function store(Request $request, Bloco $bloco){
       $this->validate($request,[
-            'nomeBlocos' => 'required|min:3',
-            'qtdAndares' => 'required|numeric|max:10',
+            'nomeBlocos' => '',
+            'qtdAndares' => '',
       ]);
 
       if($request->has('id')){
